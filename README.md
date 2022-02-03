@@ -1,6 +1,10 @@
+
+
 ## Use a pre-trained Image classifier to identify dog breed
 
 #### Project Goal
+Project done as part of Udacity course - [AI Programming with Python Nanodegree](https://www.udacity.com/course/ai-programming-python-nanodegree--nd089).
+
 Improving your programming skills using Python. In this project, you will use a created image classifier to identify dog breeds. Focus is on Python and not on the actual classifier.
 
 #### Description:
