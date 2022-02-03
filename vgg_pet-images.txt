@@ -1,0 +1,27 @@
+Command Line Arguments:
+     dir = pet_images/ 
+    arch = vgg 
+ dogfile = dognames.txt
+
+ ** Statistics from calculates_results_stats() function:
+N Images: 40  N Dog Images: 30  N NotDog Images: 10 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  93.3
+
+ ** Check Statistics - calculated from this function as a check:
+N Images: 40  N Dog Images: 30  N NotDog Images: 10 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  93.3
+
+
+*** Results Summary for CNN Model Architecture VGG ***
+N Images:  40
+N Dog Images:  30
+N not-a Dog Images:  10
+% Correct Dogs: 100.00
+% Correct Breed Dogs: 93.33
+% Correct 'Not-a' Dog: 100.00
+
+INCORRECT Dog Breed Assignment:
+['great pyrenees', 'kuvasz']
+['beagle', 'walker hound, walker foxhound']
+
+** Total Elapsed Runtime: 0:0:32

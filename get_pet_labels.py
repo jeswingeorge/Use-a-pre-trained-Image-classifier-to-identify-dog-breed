@@ -48,13 +48,17 @@ def get_pet_labels(image_dir):
     # Retrieve the filenames from folder pet_images/
     filename_list = listdir(image_dir)
     for name in filename_list:
-        val = []
         name = name.lower()
         pet_name = ''
-        for word in name.split('_'):
-            if word.isalpha():
-                pet_name += word + ' '
-        pet_name = pet_name.strip()
-        results_dic[name] = val.append(pet_name)
         
+        if name in results_dic:
+            print("** WARNING: Key = ",name, " already exists in results_dic with value = ", results_dic[name])
+        else:
+            for word in name.split('_'):
+                if word.isalpha():
+                    pet_name += word + ' '
+                    
+            pet_name = pet_name.strip()
+            results_dic[name] = [pet_name]
+
     return results_dic

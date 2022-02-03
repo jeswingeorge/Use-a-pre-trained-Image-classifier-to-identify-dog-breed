@@ -75,6 +75,7 @@ def classify_images(images_dir, results_dic, model):
         image_classification = image_classification.lower()
         image_classification = image_classification.strip()
         
+        filename = filename.lower()
         # append the classified image to the result_dic
         results_dic[filename].append(image_classification)
         
@@ -84,5 +85,6 @@ def classify_images(images_dir, results_dic, model):
         else:
             results_dic[filename].append(0)
             
+#         print(results_dic[filename])
     
 #     None 

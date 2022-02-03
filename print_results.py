@@ -62,5 +62,43 @@ def print_results(results_dic, results_stats_dic, model,
     Returns:
            None - simply printing results.
     """    
-    None
+    
+     # Prints summary statistics over the run
+    print("\n\n*** Results Summary for CNN Model Architecture",model.upper(), "***")
+
+    print("N Images: ",results_stats_dic['n_images'])
+    print("N Dog Images: ",results_stats_dic['n_dogs_img'])
+    print("N not-a Dog Images: ",results_stats_dic['n_notdogs_img'])
+    
+    # Print Percentage Calculations
+    # percentage of correctly classified dogs
+    print("% Correct Dogs: {:.2f}".format(results_stats_dic['pct_correct_dogs']))
+    # percentage of correctly classified dog breeds
+    print("% Correct Breed Dogs: {:.2f}".format(results_stats_dic['pct_correct_breed']))
+    # percentage of correctly classified NON-dogs
+    print("% Correct 'Not-a' Dog: {:.2f}".format(results_stats_dic['pct_correct_notdogs']))
+
+    # Printing details for Misclassified Dogs
+    # check that the user wants to print misclassified dogs and that dog misclassifications occurred with a conditional statement.
+    if print_incorrect_dogs and ((results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'])!=results_stats_dic['n_images']):
+        print("\nINCORRECT Dog/NOT Dog Assignments:")
+        
+        for key in results_dic.keys():
+            if sum(results_dic[key][3:])==1:
+                print(results_dic[key][:2])
+                
+   # Printing details of Misclassified Breed's of Dog
+   # Labels have a misclassification of breeds of dog when both labels indicate that the image is a dog; but, labels aren't in agreement regarding the dog's breed.
+   # check: user wants to print misclassifications and some breeds were misclassified 
+    if print_incorrect_breed and (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']):
+        print("\nINCORRECT Dog Breed Assignment:")
+        
+        for key in results_dic.keys():
+            # When the labels agree that the image is of a dog, but disagree on the breed of dog
+            if (sum(results_dic[key][3:]) == 2) and (results_dic[key][2] == 0):
+                print(results_dic[key][:2])
+
+                 
+
+#     None
                 
